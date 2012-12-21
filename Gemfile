@@ -26,6 +26,7 @@ gem 'mini_magick'
 gem 'friendly_id'
 gem 'chinese_pinyin'
 gem 'slim'
+gem 'devise'
 
 group :development do
   gem 'thin'
