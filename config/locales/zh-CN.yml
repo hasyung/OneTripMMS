@@ -1,2 +1,64 @@
 'zh-CN':
-  hello: "Hello world"
+  navs:
+    home:
+      index: "首页"
+    places:
+      index: "景区"
+    frames:
+      index: "彩信"
+      
+  breadcrumbs:
+    application:
+      root: "OneTripMMS"
+    home:
+      index: "首页"
+    places:
+      index: "景区"
+      new: "添加景区"
+      edit: "修改景区"
+    frames:
+      index: "彩信"
+      new: "添加彩信"
+      edit: "修改彩信"
+      
+  links:
+    home:
+      index: "返回首页"
+    places:
+      index: "景区列表"
+      show: "查看景区"
+      new: "添加景区"
+      edit: "修改景区"
+    frames:
+      index: "彩信列表"
+      new: "添加彩信"
+      edit: "修改彩信"
+      number: "第%{num}帧"
+      build_number: "生成序列"
+    commons:
+      action: "操作"
+      confirm: "你确定这样做吗？"
+      
+  messages:
+    places:
+      success: "操作景区成功！"
+      error: "操作景区失败！"
+    frames:
+      success: "操作短信成功！"
+      error: "操作短信失败！"
+      
+  activerecord:
+    models:
+      place: "景区"
+      frame: "彩信"
+    attributes:
+      place:
+        name: "景区名"
+        slug: "景区别名"
+        return_code: "回执编码"
+        description: "描述"
+      frame:
+        number: "序号"
+        body: "内容"
+        content: "Base64内容"
+        

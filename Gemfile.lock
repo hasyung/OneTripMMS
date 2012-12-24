@@ -34,7 +34,13 @@ GEM
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    carrierwave-base64-storage (1.0.0)
+      carrierwave
     chinese_pinyin (0.4.1)
+    client_side_validations (3.2.1)
+    client_side_validations-simple_form (2.0.1)
+      client_side_validations (~> 3.2.0)
+      simple_form (~> 2.0.3)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -173,7 +179,10 @@ PLATFORMS
 
 DEPENDENCIES
   carrierwave
+  carrierwave-base64-storage
   chinese_pinyin
+  client_side_validations
+  client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   devise
   friendly_id

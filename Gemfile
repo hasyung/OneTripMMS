@@ -17,10 +17,13 @@ gem 'twitter-bootstrap-rails'
 
 # other
 gem 'carrierwave'
+gem 'carrierwave-base64-storage'
 gem 'quiet_assets'
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 gem 'mime-types'
 gem 'mini_magick'
 gem 'friendly_id'

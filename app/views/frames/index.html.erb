@@ -1,0 +1,31 @@
+<%= render "base" %>
+<div class="box">
+  <div class="box-title">
+    <span class="icon"><i class="icon-list"></i></span>
+    <h5><%= t('links.frames.index') %></h5>
+  </div>
+  <div class="box-content">
+    <ul class="frames">
+      <% @frames.each do |frame| %>
+      <li>
+        <div class="frame-title">
+          <span class="icon"><i class="icon-comment-alt"></i></span>
+          <h5><%= t('links.frames.number', :num => frame.number) %></h5>
+          <div class="action pull-right">
+            <%= link_to raw("<i class=\"icon-edit\"></i>"), edit_place_frame_path(@place, frame), 
+                        :title => t('links.frames.edit') %>
+            <%= link_to raw("<i class=\"icon-trash\"></i>"),
+                        place_frame_path(@place, frame),
+                        :method => :delete,
+                        :data => { :confirm => t('links.commons.confirm') } %>
+          </div>
+        </div>
+        <div class="frame-content clearfix">
+          <div class="frame-image pull-left"><%= image_tag frame.image.url %></div>
+          <div class="frame-text"><%= frame.body %></div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
