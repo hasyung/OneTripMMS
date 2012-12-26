@@ -17,7 +17,7 @@ class Frame < ActiveRecord::Base
   scope :number_asc, order("number ASC")
   
   def mms_content
-    "#{self.number}_1,#{content};"
+    "#{self.number}_1.txt,#{content};"
   end
   
   def mms_image

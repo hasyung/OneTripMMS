@@ -6,6 +6,24 @@ class FramesController < ApplicationController
   def index
     @frames = @place.frames.number_asc
     add_breadcrumb :index
+    
+    content = ""
+    sn = "SDK-WSS-010-02513"
+    password = "850-2EE5"
+    pwd = Digest::MD5.hexdigest(sn + password).upcase
+    logger.info("pwd=#{pwd}")
+    title = @place.name
+    mobile = "15928135150"
+    stime = Time.now.to_time
+    logger.info("stime=#{stime}")
+    @frames.each do |frame|
+      content += frame.mms_content if frame.mms_content.present?
+      content += frame.mms_image if frame.mms_image.present?
+    end
+    content = content[0, content.length - 1]
+    logger.info("content=#{content}")
+    Server.mms_send(sn, pwd, title, mobile, content, stime)
+   
   end
 
   def new
