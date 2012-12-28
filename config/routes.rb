@@ -10,11 +10,6 @@ OneTripMMS::Application.routes.draw do
       end
     end
   end
-  resources :frames
-  
-  resources :settings, :only => [:index] do
-    match 'index' => "settings#index", :on => :collection, :via => [:get, :post]
-  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
