@@ -27,7 +27,7 @@ class Frame < ActiveRecord::Base
   private
   def update_content_attribute
     if body.present? && body_changed?
-      self.content = Base64.encode64 self.body.force_encoding('gb2312')
+      self.content = Base64.encode64(body.force_encoding('gb2312'))
     end
   end
   

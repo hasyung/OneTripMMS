@@ -6,6 +6,8 @@
       index: "景区"
     frames:
       index: "彩信"
+    settings:
+      index: "设置"
       
   breadcrumbs:
     application:
@@ -20,6 +22,8 @@
       index: "彩信"
       new: "添加彩信"
       edit: "修改彩信"
+    settings: 
+      index: "保存设置"
       
   links:
     home:
@@ -38,8 +42,10 @@
     commons:
       action: "操作"
       confirm: "你确定这样做吗？"
+    setting: "设置"
       
   messages:
+    setting: "你已经成功保存设置！"
     places:
       success: "操作景区成功！"
       error: "操作景区失败！"
@@ -61,4 +67,9 @@
         number: "序号"
         body: "内容"
         content: "Base64内容"
+      setting:
+        mms_url: "彩信API"
+        sms_url: "短信API"
+        sn: "帐号"
+        password: "密码"
         

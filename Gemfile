@@ -16,6 +16,8 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 # other
+gem 'savon'
+gem 'rails-settings-cached'
 gem 'carrierwave'
 gem 'carrierwave-base64-storage'
 gem 'quiet_assets'
