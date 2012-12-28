@@ -1,0 +1,13 @@
+defaults: &defaults
+  web_service:
+    sn: "SDK-WSS-010-02513"
+    pwd: "850-2EE5"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
