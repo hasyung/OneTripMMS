@@ -1,5 +1,5 @@
 class Frame < ActiveRecord::Base
-  attr_accessible :body, :content, :number, :place_id, :image
+  attr_accessible :body, :content, :number, :place_id, :image, :image_cache
   
   before_save :update_content_attribute, :update_image_attribute
   
@@ -21,13 +21,13 @@ class Frame < ActiveRecord::Base
   end
   
   def mms_image
-    "#{self.number}_2.#{image_ext},#{image_base64};"
+    "#{self.number}_2.#{image_ext},#{image_base64}"
   end
   
   private
   def update_content_attribute
     if body.present? && body_changed?
-      self.content = Base64.encode64(body.force_encoding('gb2312'))
+      self.content = Base64.encode64 self.body.encode("gb2312")
     end
   end
   

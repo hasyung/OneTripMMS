@@ -1,3 +1,6 @@
 == OneTrip MMS
 
 = One Trip Multimedia Messages
+
+SDK-WSS-010-02513
+850-2EE5

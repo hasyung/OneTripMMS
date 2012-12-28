@@ -6,18 +6,6 @@ class FramesController < ApplicationController
   def index
     @frames = @place.frames.number_asc
     add_breadcrumb :index
-    
-    content = ""
-    title = @place.name
-    mobile = "15928135150"
-    @frames.each do |frame|
-      content += frame.mms_content if frame.mms_content.present?
-      content += frame.mms_image if frame.mms_image.present?
-    end
-    content = content[0, content.length - 1]
-    
-    logger.info("mms_send=#{MmsServer.mms_send(title, mobile, content)}")
-   
   end
 
   def new

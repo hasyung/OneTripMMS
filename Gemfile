@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -16,7 +16,6 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
 # other
-gem 'savon'
 gem 'rails-settings-cached'
 gem 'carrierwave'
 gem 'carrierwave-base64-storage'
@@ -32,6 +31,10 @@ gem 'friendly_id'
 gem 'chinese_pinyin'
 gem 'slim'
 gem 'devise'
+gem 'soap4r-spox'
+gem 'settingslogic'
+gem 'savon', '~> 2.0'
+gem 'whenever', :require => false
 
 group :development do
   gem 'thin'
