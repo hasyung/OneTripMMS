@@ -1,6 +1,6 @@
-<%= simple_form_for([@place, @frame], :validate => true, :html => { :class => 'form-horizontal' }) do |f| %>
+<%= simple_form_for([@place, @frame], :html => { :class => 'form-horizontal' }) do |f| %>
   <%= f.input :number do %>
-    <%= f.input_field :number %>
+  <%= f.input_field :number %>
     <%= link_to t('links.frames.build_number'), build_number_place_frames_path(@place), :remote => true, :class => 'btn btn-warning' %>
   <% end %>
   <%= f.input :image, :as => :file %>

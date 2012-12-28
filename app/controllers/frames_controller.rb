@@ -18,7 +18,6 @@ class FramesController < ApplicationController
     if @frame.save
       redirect_to place_frames_path(@place), :notice => t('messages.frames.success')
     else
-      binding.pry
       render :new
     end
     add_breadcrumb :new
