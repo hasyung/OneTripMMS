@@ -33,8 +33,8 @@
               <li<%= raw ' class="active"' if %w(places).include?(controller_name) %>>
                 <%= link_to t("navs.places.index"), places_path %>
               </li>
-              <li<%= raw ' class="active"' if %w(frames).include?(controller_name) %>>
-                <%= link_to t("navs.frames.index"), '#' %>
+              <li<%= raw ' class="active"' if %w(tests).include?(controller_name) %>>
+                <%= link_to t("navs.tests.show"), test_path %>
               </li>
             </ul>
           </div>
@@ -45,6 +45,7 @@
     <div class="container">
         <div class="row">
           <div class="span12"><%= render_breadcrumbs %></div>
+          <div class="span12"><%= bootstrap_flash %></div>
           <%= render "layouts/sidebars/#{content_for?(:sidebar) ? 'two_column' : 'full_column' }" %>
         </div>
 

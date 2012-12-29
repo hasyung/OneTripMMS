@@ -10,6 +10,13 @@ OneTripMMS::Application.routes.draw do
       end
     end
   end
+  
+  resource :test, :only => [:show] do
+    member do
+      post 'send_mms'
+      post 'receive_sms'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

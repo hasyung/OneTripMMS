@@ -21,7 +21,7 @@ class Frame < ActiveRecord::Base
   end
   
   def mms_image
-    "#{self.number}_2.#{image_ext},#{image_base64}"
+    "#{self.number}_2.#{image_ext},#{image_base64};"
   end
   
   private

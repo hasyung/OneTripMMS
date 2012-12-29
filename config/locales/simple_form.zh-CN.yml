@@ -15,5 +15,14 @@
       frame:
         number: "必填且同个景区里必须唯一，大于0的整数。"
         body: "必填，10000个字符以内。"
+      test:
+        mobile: "必填，多个电话以英文','间隔。"
+        stime: "选填，不填请留空。"
+        place: "必选，请选择要发送的景区。"
+    labels:
+      test:
+        place: "景区"
+        mobile: "发送的电话"
+        stime: "定时发送"
       
 

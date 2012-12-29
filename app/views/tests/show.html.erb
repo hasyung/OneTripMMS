@@ -1,0 +1,27 @@
+<%= render "base" %>
+<div class="box">
+  <div class="box-title">
+    <span class="icon"><i class="icon-pencil"></i></span>
+    <h5><%= t('links.tests.send_mms') %></h5>
+  </div>
+  <div class="box-content no-padding">
+    <%= simple_form_for(:test, :url => send_mms_test_path, :html => { :class => 'form-horizontal' }) do |f| %>
+    <%= f.input :place, :collection => Place.all.map { |p| [p.name, p.id] }, :include_blank => false %>
+      <%= f.input :mobile %>
+      <%= f.input :stime, :required => false %>
+      <div class="form-actions">
+        <%= f.submit t('links.tests.send_mms'), :class => 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="box">
+  <div class="box-title">
+    <span class="icon"><i class="icon-pencil"></i></span>
+    <h5><%= t('links.tests.receive_sms') %></h5>
+  </div>
+  <div class="box-content no-padding">
+    
+  </div>
+</div>
