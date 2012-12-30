@@ -5,7 +5,7 @@ module Service
     def self.receive_sms
       options = { pwd: pwd }
       response = @@client.call(:mo, message: default_options.merge!(options))
-      response.body
+      response.body[:mo_response][:mo_result]
     end
     
     private
