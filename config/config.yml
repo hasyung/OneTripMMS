@@ -1,0 +1,15 @@
+defaults: &defaults
+  web_service:
+    sn: "SDK-WSS-010-02513"
+    pwd: "850-2EE5"
+    mms_url: "http://sdk3.entinfo.cn:8060/webservice.asmx?WSDL"
+    sms_url: "http://sdk2.entinfo.cn:8060/webservice.asmx?WSDL"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,0 +1,41 @@
+<%- model_class = Place -%>
+<%= render "base" %>
+<div class="box">
+  <div class="box-title">
+    <span class="icon"><i class="icon-th"></i></span>
+    <h5><%= t('links.places.index') %></h5>
+  </div>
+  <div class="box-content">
+    <table class="table table-bordered table-striped with-check">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
+          <th><%= model_class.human_attribute_name(:name) %></th>
+          <th><%= model_class.human_attribute_name(:return_code) %></th>
+          <th><%= model_class.human_attribute_name(:description) %></th>
+          <th class="action"><%= t('links.commons.action') %></th>
+        </tr>
+      </thead>
+      </tbody>
+        <% @places.each do |place| %>
+          <tr>
+            <td><%= check_box_tag "place_ids[]", place.id, false, :id => "place_#{place.id}" %></td>
+            <td><%= link_to place.name, place_frames_path(place) %></td>
+            <td><%= place.return_code %></td>
+            <td><%= place.description %></td>
+            <td class="action">
+              <%= link_to raw("<i class=\"icon-eye-open\"></i>"), place_frames_path(place), 
+                          :title => t('links.places.show') %>
+              <%= link_to raw("<i class=\"icon-edit\"></i>"), edit_place_path(place), 
+                          :title => t('links.places.edit') %>
+              <%= link_to raw("<i class=\"icon-trash\"></i>"),
+                          place_path(place),
+                          :method => :delete,
+                          :data => { :confirm => t('links.commons.confirm') } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

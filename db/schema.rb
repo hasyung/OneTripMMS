@@ -11,15 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221085705) do
+ActiveRecord::Schema.define(:version => 20121228101227) do
 
   create_table "frames", :force => true do |t|
-    t.integer  "place_id",                  :null => false
-    t.integer  "number",     :default => 0, :null => false
-    t.text     "body",                      :null => false
-    t.text     "content",                   :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.integer  "place_id",                          :null => false
+    t.integer  "number",             :default => 0, :null => false
+    t.text     "body",                              :null => false
+    t.text     "content",                           :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.string   "image",                             :null => false
+    t.text     "image_base64",                      :null => false
+    t.string   "image_content_type"
+    t.integer  "image_size",         :default => 0
+    t.string   "image_ext"
   end
 
   add_index "frames", ["place_id", "number"], :name => "index_frames_on_place_id_and_number", :unique => true
@@ -31,9 +36,11 @@ ActiveRecord::Schema.define(:version => 20121221085705) do
     t.integer  "frames_count",                :default => 0
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
+    t.string   "return_code",  :limit => 10,                 :null => false
   end
 
   add_index "places", ["name"], :name => "index_places_on_name", :unique => true
+  add_index "places", ["return_code"], :name => "index_places_on_return_code", :unique => true
   add_index "places", ["slug"], :name => "index_places_on_slug", :unique => true
 
   create_table "users", :force => true do |t|

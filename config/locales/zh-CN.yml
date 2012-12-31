@@ -1,2 +1,94 @@
 'zh-CN':
-  hello: "Hello world"
+  navs:
+    home:
+      index: "首页"
+    places:
+      index: "景区"
+    frames:
+      index: "彩信"
+    tests:
+      show: "测试"
+      
+  breadcrumbs:
+    application:
+      root: "OneTripMMS"
+    home:
+      index: "首页"
+    places:
+      index: "景区"
+      new: "添加景区"
+      edit: "修改景区"
+    frames:
+      index: "彩信"
+      new: "添加彩信"
+      edit: "修改彩信"
+    tests: 
+      show: "测试"
+      
+  links:
+    home:
+      index: "返回首页"
+    places:
+      index: "景区列表"
+      show: "查看景区"
+      new: "添加景区"
+      edit: "修改景区"
+    frames:
+      index: "彩信列表"
+      new: "添加彩信"
+      edit: "修改彩信"
+      number: "第%{num}帧"
+      build_number: "生成序列"
+    commons:
+      action: "操作"
+      confirm: "你确定这样做吗？"
+    tests: 
+      send_mms: "发送彩信"
+      receive_sms: "接收短信"
+      
+  messages:
+    tests:
+      arguments_error: "参数错误！"
+      success: "发送彩信成功！"
+      error:
+        e_2: "帐号/密码不正确"
+        e_3: "重复登陆"
+        e_4: "余额不足"
+        e_5: "数据格式错误"
+        e_6: "参数有误"
+        e_8: "流量控制错误"
+        e_11: "数据库错误"
+        e_12: "序列号状态错误"
+        e_13: "没有提交增值内容"
+        e_14: "服务器写文件失败"
+        e_15: "内容长度长"
+        e_17: "该接口禁止使用该方法"
+        e_18: "等上一批提交结果返回再继续下一批提交"
+          
+    places:
+      success: "操作景区成功！"
+      error: "操作景区失败！"
+    frames:
+      success: "操作短信成功！"
+      error: "操作短信失败！"
+      
+  activerecord:
+    models:
+      place: "景区"
+      frame: "彩信"
+    attributes:
+      place:
+        name: "景区名"
+        slug: "景区别名"
+        return_code: "回执编码"
+        description: "描述"
+      frame:
+        number: "序号"
+        body: "内容"
+        content: "Base64内容"
+      setting:
+        mms_url: "彩信API"
+        sms_url: "短信API"
+        sn: "帐号"
+        password: "密码"
+        
