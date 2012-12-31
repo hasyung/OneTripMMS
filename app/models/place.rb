@@ -31,4 +31,18 @@ class Place < ActiveRecord::Base
     content.chop
   end
   
+  def self.receive_sms
+    result = Service::SMS.receive_sms
+    if result.to_i > 1
+      result.split("\n").group_by { |item| item.split(",")[3] }.each do |key, value|
+        place = Place.find_by_return_code key
+        if !place.blank?
+          phones = []
+          value.map { |v| phones << v.split(",")[2] }
+          Service::MMS.send_mms(:title => place.name, :content => place.mms_content, :mobile => phones.uniq.join(","), :stime => "")
+        end
+      end
+    end
+  end
+  
 end

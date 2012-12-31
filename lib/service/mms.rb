@@ -19,6 +19,7 @@ module Service
     
     def self.send_mms(options = {})
       options[:pwd] ||= pwd
+      options[:stime] ||= ""
       response = @@client.call(:md_mms_send, message: default_options.merge!(options))
       response.body[:md_mms_send_response][:md_mms_send_result].to_i
     end
