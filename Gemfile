@@ -30,7 +30,6 @@ gem 'friendly_id'
 gem 'chinese_pinyin'
 gem 'slim'
 gem 'devise'
-gem 'soap4r-spox'
 gem 'settingslogic'
 gem 'savon', '~> 2.0'
 gem 'whenever', :require => false
