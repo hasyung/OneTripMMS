@@ -39,7 +39,7 @@ class Place < ActiveRecord::Base
     result = Service::SMS.receive_sms
     if result.to_i > 1
       result.split("\n").group_by { |item| item.split(",")[3] }.each do |key, value|
-        place = Place.find_by_return_code key
+        place = Place.find_by_return_code(key.downcase)
         if !place.blank?
           phones = []
           value.map { |v| phones << v.split(",")[2] }
