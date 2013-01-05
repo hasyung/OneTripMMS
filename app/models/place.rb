@@ -44,10 +44,11 @@ class Place < ActiveRecord::Base
         value.map { |v| phones << v.split(",")[2] }
         place = Place.find_by_return_code(key.downcase)
         if !place.blank?
-          if Service::MMS.send_mms(:title => place.title, :content => place.mms_content, :mobile => phones.join(","), :stime => "") > 1
+          send_result = Service::MMS.send_mms(:title => place.title, :content => place.mms_content, :mobile => phones.join(","), :stime => "")
+          if send_result > 1
             Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: success"
           else
-            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: fail"
+            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: fail - #{send_result}"
           end
         else
           Service::MMS.send_log "phones: #{phones.join(",")}, state: not find place"
