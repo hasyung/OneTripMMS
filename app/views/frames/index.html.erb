@@ -22,7 +22,7 @@
         </div>
         <div class="frame-content clearfix">
           <div class="frame-image pull-left"><%= image_tag frame.image.url %></div>
-          <div class="frame-text"><%= frame.body %></div>
+          <div class="frame-text"><%= simple_format frame.body %></div>
         </div>
       </li>
       <% end %>

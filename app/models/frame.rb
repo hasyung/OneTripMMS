@@ -27,7 +27,7 @@ class Frame < ActiveRecord::Base
   private
   def update_content_attribute
     if body.present? && body_changed?
-      self.content = Base64.encode64 self.body.encode("gb2312")
+      self.content = Base64.encode64 self.body.encode("gb2312", { :invalid => :replace, :undef => :replace, :replace => '*' })
     end
   end
   

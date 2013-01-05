@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121228101227) do
+ActiveRecord::Schema.define(:version => 20130105021235) do
 
   create_table "frames", :force => true do |t|
     t.integer  "place_id",                          :null => false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20121228101227) do
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
     t.string   "return_code",  :limit => 10,                 :null => false
+    t.string   "title",        :limit => 50
   end
 
   add_index "places", ["name"], :name => "index_places_on_name", :unique => true

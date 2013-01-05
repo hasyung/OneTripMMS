@@ -79,6 +79,7 @@
     attributes:
       place:
         name: "景区名"
+        title: "标题名"
         slug: "景区别名"
         return_code: "回执编码"
         description: "描述"
