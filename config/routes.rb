@@ -17,6 +17,8 @@ OneTripMMS::Application.routes.draw do
       post 'receive_sms'
     end
   end
+  
+  resources :logs, :only => [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

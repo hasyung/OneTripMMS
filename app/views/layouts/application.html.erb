@@ -36,6 +36,9 @@
               <li<%= raw ' class="active"' if %w(tests).include?(controller_name) %>>
                 <%= link_to t("navs.tests.show"), test_path %>
               </li>
+              <li<%= raw ' class="active"' if %w(logs).include?(controller_name) %>>
+                <%= link_to t("navs.logs.index"), logs_path %>
+              </li>
             </ul>
           </div>
         </div>

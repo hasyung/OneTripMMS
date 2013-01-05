@@ -8,6 +8,8 @@
       index: "彩信"
     tests:
       show: "测试"
+    logs:
+      index: "日志"
       
   breadcrumbs:
     application:
@@ -24,6 +26,8 @@
       edit: "修改彩信"
     tests: 
       show: "测试"
+    logs:
+      index: "日志"
       
   links:
     home:
@@ -46,6 +50,9 @@
       send_mms: "发送彩信"
       receive_sms: "接收短信"
       prefix_test: "测试"
+    logs:
+      receive: "接收短信"
+      send: "发送彩信"
       
   messages:
     tests:
