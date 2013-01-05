@@ -1,5 +1,6 @@
 <%= simple_form_for(@place, :html => { :class => 'form-horizontal' }) do |f| %>
   <%= f.input :name %>
+  <%= f.input :title %>
   <%= f.input :return_code %>
   <%= f.input :description, :as => :text %>
   <div class="form-actions">

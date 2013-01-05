@@ -10,6 +10,7 @@
     hints:
       place:
         name: "必填，30个字符以内，必须唯一。"
+        title: "必填，30个字符以内。"
         return_code: "必填，10个字符以内，必须唯一。"
         description: "选填，100个字符以内。"
       frame:
