@@ -43,7 +43,7 @@ class Place < ActiveRecord::Base
         if !place.blank?
           phones = []
           value.map { |v| phones << v.split(",")[2] }
-          Service::MMS.send_mms(:title => place.name, :content => place.mms_content, :mobile => phones.join(","), :stime => "")
+          Service::MMS.send_mms(:title => place.title, :content => place.mms_content, :mobile => phones.join(","), :stime => "")
         end
       end
     end
