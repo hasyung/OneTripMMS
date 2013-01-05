@@ -11,7 +11,7 @@ module Service
     def self.receive_log message
       file = File.open(File.expand_path("public/receive.log", Rails.root), File::WRONLY | File::APPEND | File::CREAT)
       logger = Logger.new file
-      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}"
+      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}\n"
       file.close
     end
     

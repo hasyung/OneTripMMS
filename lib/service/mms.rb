@@ -27,7 +27,7 @@ module Service
     def self.send_log(message)
       file = File.open(File.expand_path("public/send.log", Rails.root), File::WRONLY | File::APPEND | File::CREAT)
       logger = Logger.new file
-      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}"
+      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}\n"
       file.close
     end
     
