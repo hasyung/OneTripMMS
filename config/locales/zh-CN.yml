@@ -45,6 +45,7 @@
     tests: 
       send_mms: "发送彩信"
       receive_sms: "接收短信"
+      prefix_test: "测试"
       
   messages:
     tests:

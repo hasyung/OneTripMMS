@@ -14,7 +14,7 @@ class TestsController < ApplicationController
     options = {}
     options[:stime] = "" if params[:test][:stime].blank?
     options[:mobile] = params[:test][:mobile]
-    options[:title] = @place.name
+    options[:title] = "#{t('links.tests.prefix_test')}-#{@place.title}"
     options[:content] = @place.mms_content
     
     result = Service::MMS.send_mms options

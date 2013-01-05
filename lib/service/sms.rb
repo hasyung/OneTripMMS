@@ -8,6 +8,13 @@ module Service
       response.body[:mo_response][:mo_result]
     end
     
+    def self.receive_log message
+      file = File.open(File.expand_path("public/receive.log", Rails.root), File::WRONLY | File::APPEND | File::CREAT)
+      logger = Logger.new file
+      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}"
+      file.close
+    end
+    
     private
     def self.default_options
       { sn: Setting.web_service.sn, password: Setting.web_service.pwd }

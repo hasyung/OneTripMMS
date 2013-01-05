@@ -24,6 +24,13 @@ module Service
       response.body[:md_mms_send_response][:md_mms_send_result].to_i
     end
     
+    def self.send_log(message)
+      file = File.open(File.expand_path("public/send.log", Rails.root), File::WRONLY | File::APPEND | File::CREAT)
+      logger = Logger.new file
+      logger.info "#{DateTime.now.strftime("%Y-%m-%d %H:%M:%S")} - #{message}"
+      file.close
+    end
+    
     private
     def self.default_options
       { sn: Setting.web_service.sn, pwd: Setting.web_service.pwd }

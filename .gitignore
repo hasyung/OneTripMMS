@@ -18,6 +18,7 @@ config/database.yml
 config/thin.yml
 public/uploads
 public/assets
+public/*.log
 
 .DS_store
 .redcar

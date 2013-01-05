@@ -38,12 +38,19 @@ class Place < ActiveRecord::Base
   def self.receive_sms
     result = Service::SMS.receive_sms
     if result.to_i > 1
+      Service::SMS.receive_log result
       result.split("\n").group_by { |item| item.split(",")[3] }.each do |key, value|
         place = Place.find_by_return_code(key.downcase)
         if !place.blank?
           phones = []
           value.map { |v| phones << v.split(",")[2] }
-          Service::MMS.send_mms(:title => place.title, :content => place.mms_content, :mobile => phones.join(","), :stime => "")
+          if Service::MMS.send_mms(:title => place.title, :content => place.mms_content, :mobile => phones.join(","), :stime => "") > 1
+            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: success"
+          else
+            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: fail"
+          end
+        else
+          Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: not find place"
         end
       end
     end
