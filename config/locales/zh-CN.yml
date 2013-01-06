@@ -32,6 +32,10 @@
   links:
     home:
       index: "返回首页"
+      info: "信息"
+      account: "账号"
+      password: "密码"
+      balance: "余额点数"
     places:
       index: "景区列表"
       show: "查看景区"

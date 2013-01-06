@@ -1,4 +1,6 @@
 defaults: &defaults
+  app_name: "彩信管理平台"
+  company: "壹旅游"
   web_service:
     sn: "SDK-WSS-010-02513"
     pwd: "850-2EE5"

@@ -1,0 +1,19 @@
+<div class="infos">
+  <h3><%= t('links.home.info') %></h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><%= t('links.home.account') %></th>
+        <th><%= t('links.home.password') %></th>
+        <th><%= t('links.home.balance') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= Setting.web_service.sn %></td>
+        <td><%= Setting.web_service.pwd %></td>
+        <td><%= @balance %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

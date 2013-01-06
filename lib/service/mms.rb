@@ -7,14 +7,10 @@ module Service
       response.body[:get_all_info_response][:get_all_info_result]
     end
     
-    def self.get_balance
-      response = @@client.call(:get_balance, message: default_options)
-      response.body[:get_balance_response][:get_balance_result].strip
-    end
-    
-    def self.get_md5_balance(options = {})
+    def self.get_balance(options = {})
       options[:pwd] ||= pwd
       response = @@client.call(:balance, message: default_options.merge!(options))
+      response.body[:balance_response][:balance_result]
     end
     
     def self.send_mms(options = {})

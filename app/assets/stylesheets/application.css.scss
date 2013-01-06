@@ -251,16 +251,23 @@ body {
   h3 {
     margin-top: 0;
   }
+  .log {
+    background-color: #EEE;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: left;
+    padding: 10px;
+    color: #666;
+    overflow:scroll;
+    height: 200px;
+  }
 }
-.log {
-  background-color: #EEE;
-  text-align: center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: left;
-  padding: 10px;
-  color: #666;
-  overflow:scroll;
-  height: 200px;
+
+.infos {
+  margin-bottom: 20px;
+  h3 {
+    margin-top: 0;
+  }
 }
