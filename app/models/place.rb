@@ -49,12 +49,12 @@ class Place < ActiveRecord::Base
                                               :mobile => phones.join(","), 
                                               :stime => "")
           if send_result > 1
-            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: #{t("messages.tests.success")}"
+            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: success"
           else
-            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: #{t("messages.tests.error.e_#{send_result.abs}")}"
+            Service::MMS.send_log "phones: #{phones.join(",")}, title: #{place.title}, state: fail - #{send_result}"
           end
         else
-          Service::MMS.send_log "phones: #{phones.join(",")}, key: #{key}, state: #{t("messages.tests.error.f_1")}"
+          Service::MMS.send_log "phones: #{phones.join(",")}, key: #{key}, state: #{t('messages.tests.error.f_1')}"
         end
       end
     end
