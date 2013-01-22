@@ -14,8 +14,10 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
-  <body>
-
+  <body id="<%= "#{controller_name}-#{action_name}" %>">
+    <% if %w(sessions).include?(controller_name) %>
+      <%= render "layouts/login" %>
+    <% else %>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -40,10 +42,25 @@
                 <%= link_to t("navs.logs.index"), logs_path %>
               </li>
             </ul>
+
+            <ul class="nav pull-right">
+                <% if user_signed_in? %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="icon-user-md"></i> <%= current_user.email %> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="divider"></li>
+                      <li><%= link_to(t("helpers.links.logout"), destroy_user_session_path, :method => :delete) %></li>
+                    </ul>
+                  </li>
+                <% end -%>
+              </ul>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -56,8 +73,9 @@
         <p><%= Setting.company %> &copy; Company 2012</p>
       </footer>
 
+    
     </div>
-
+    <% end %>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

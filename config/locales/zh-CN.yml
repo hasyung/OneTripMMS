@@ -77,8 +77,7 @@
         e_15: "内容长度长"
         e_17: "该接口禁止使用该方法"
         e_18: "等上一批提交结果返回再继续下一批提交"
-        e_22: "当前提交的IP不是绑定的IP"
-          
+        e_22: "当前提交的IP不是绑定的IP"    
     places:
       success: "操作景区成功！"
       error: "操作景区失败！"
@@ -90,6 +89,7 @@
     models:
       place: "景区"
       frame: "彩信"
+      user: "用户"
     attributes:
       place:
         name: "景区名"
@@ -106,4 +106,61 @@
         sms_url: "短信API"
         sn: "帐号"
         password: "密码"
+      user:
+        login: "用户名"
+        password: "密码"
+        email: "邮箱"
+        password_confirmation: "确认密码"
+        remember_me: "记住我"
+        created_at: "创建时间"
+        updated_at: "修改时间"
         
+  helpers:
+    links:
+      login: "登录"
+      logout: "退出"
+
+  devise:
+    failure:
+      already_authenticated: '您已经登录.'
+      unauthenticated: '继续操作前请登录.'
+      unconfirmed: '继续操作前请先激活您的帐号.'
+      locked: '您的帐号已被锁定.'
+      invalid: '用户名或密码错误'
+      invalid_token: '认证码无效.'
+      timeout: '您已登录超时，请重新登录.'
+      inactive: '您还没有激活帐户.'
+    sessions:
+      signed_in: '登录成功.'
+      signed_out: '退出成功.'
+    passwords:
+      send_instructions: '稍后你将收到帐号激活的电子邮件'
+      updated: '您的密码已修改成功，您现在已登录.'
+      updated_not_active: '您的密码已修改成功.'
+      send_paranoid_instructions: '如果您的邮箱存在于我们的数据库中，您将收到一封找回密码的邮件.'
+    confirmations:
+      send_instructions: '稍后你将收到帐号激活的电子邮件'
+      confirmed: '您的帐号已经激活，您现在已登录.'
+      send_paranoid_instructions: '如果您的邮箱存在于我们的数据库中，您将收到一封激活账号的邮件.'
+    registrations:
+      signed_up: '欢迎您！您已注册成功.'
+      updated: '帐号资料更新成功.'
+      update_needs_confirmation: '您更改了邮箱地址，我们需要验证您的新邮箱地址，请查看您的邮箱，点击激活链接来验证您的新邮箱地址.'
+      destroyed: '再见！您的帐户已成功注销。我们希望很快可以再见到您.'
+      signed_up_but_unconfirmed: '带有激活链接的信息已经发送到你的邮箱。请打开此链接来激活你的帐号'
+      signed_up_but_inactive: '虽然您已经注册成功，但因为你的帐号还未激活，所以你暂时无法登录'
+      signed_up_but_locked: '虽然您已经注册成功，但因为你的帐号已被锁定，所以你暂时无法登录'
+    unlocks:
+      send_instructions: '稍后你将收到帐号激活的电子邮件'
+      unlocked: '您的帐号已成功解锁，您现在已登录.'
+      send_paranoid_instructions: '如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件.'
+    omniauth_callbacks:
+      success: '成功地从 %{kind}获得授权.'
+      failure: '因为 %{reason}，所以您无法从 %{kind}获得授权.'
+    mailer:
+      confirmation_instructions:
+        subject: '激活信息'
+      reset_password_instructions:
+        subject: '重置密码信息'
+      unlock_instructions:
+        subject: '解锁信息' 
