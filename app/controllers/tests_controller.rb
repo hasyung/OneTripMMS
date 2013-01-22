@@ -12,12 +12,12 @@ class TestsController < ApplicationController
     @place = Place.find_by_id params[:test][:place]
     
     options = {}
-    options[:stime] = "" if params[:test][:stime].blank?
     options[:mobile] = params[:test][:mobile]
     options[:title] = "#{t('links.tests.prefix_test')}-#{@place.title}"
     options[:content] = @place.mms_content
     
-    result = Service::MMS.send_mms options
+    api = Zucp::API.new
+    result = api.send_mms options
     if result < 0
       redirect_to test_path, :alert => t("messages.tests.error.e_#{result.abs}")
     else
